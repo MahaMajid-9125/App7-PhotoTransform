@@ -151,7 +151,8 @@
         <input type="file" id="fileInput" STYLE="background-color: #FF6600;">
       </div>
       <div id="messageDisplayArea"></div>
-      
+     
+       <!-- First canvas to display the original image -->
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
       <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
@@ -160,6 +161,16 @@
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
       </script>
+
+      <!-- Second canvas to display the blue-filtered image -->
+     <canvas id="canvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+     <script> //This script initiates second canvas and adds placeholder text
+       var canvas2 = document.getElementById('canvas2'); // Get reference to second canvas
+       var context2 = canvas2.getContext("2d"); // Get 2D drawing context
+       context2.font = '20pt Calibri'; //This sets the text font to the same as canvas 1.
+       context2.fillStyle = "black"; //This sets the text color to the same as canvas 1.
+       context2.fillText("Filtered image's location", 10, 20); //This plots the placeholder text.
+     </script>
 
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
